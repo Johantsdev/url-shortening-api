@@ -1,0 +1,12 @@
+footer {
+    background-color: $clr-neutral-very-dark-violet;
+}
+
+footer .attribution { 
+    color: white;
+    font-size: 11px; 
+    text-align: center; 
+    & a {
+        color: $clr-primary-cyan;
+    }
+}

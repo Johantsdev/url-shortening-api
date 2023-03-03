@@ -1,0 +1,17 @@
+@import "sass/abstracts/variables";
+@import "sass/abstracts/mixins";
+@import "sass/abstracts/extends";
+  
+
+@import "sass/base/reset";
+@import "sass/base/general";
+@import "sass/base/typography";
+
+@import "sass/components/buttons";
+
+@import "sass/layout/header";
+@import "sass/layout/main";
+@import "sass/layout/hero";
+@import "sass/layout/banner";
+@import "sass/layout/footer";
+

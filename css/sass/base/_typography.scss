@@ -1,0 +1,28 @@
+h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: $clr-primary-dark-violet;
+    line-height: 6.8rem;
+}
+h2 {
+    font-size: 4.3rem;
+    font-weight: bold;
+    color: $clr-primary-dark-violet; 
+}
+.banner h2 {
+    color: white;
+}
+h3 {
+    font-size: 3.3rem;
+    font-weight: bold;
+    color: $clr-primary-dark-violet;  
+}
+h4, .nav-content{
+    font-size: 2.5rem;
+    font-weight: $fw-bold;
+    color: white;  
+}
+.footer-content a, p {
+    font-size: 2.7rem;
+    color: $clr-neutral-grayish-violet;
+}
