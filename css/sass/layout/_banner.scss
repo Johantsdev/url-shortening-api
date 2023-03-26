@@ -1,3 +1,21 @@
 section.banner {
-    background-color: $clr-primary-dark-violet;
+    background: 
+        center / cover no-repeat url('../../../images/bg-boost-mobile.svg')
+        $clr-primary-dark-violet;
+    padding-block: 10rem;
+    & h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    & button {
+        @include buttonCyan(19rem, 9.5rem)
+    }
+}
+
+@include minBreakPoint(700px) {
+    section.banner {
+        background: 
+            center / cover no-repeat url('../../../images/bg-boost-desktop.svg')
+            $clr-primary-dark-violet;
+    }
 }

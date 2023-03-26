@@ -1,12 +1,80 @@
 footer {
     background-color: $clr-neutral-very-dark-violet;
 }
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 6rem;
+    & a.logo {
+        margin-bottom: 5rem;
+    }
+    & .footer-content {
 
-footer .attribution { 
-    color: white;
-    font-size: 11px; 
-    text-align: center; 
-    & a {
-        color: $clr-primary-cyan;
+        & div:not(.social-links) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+            & h4 {
+                margin-bottom: 2rem;
+            }
+            & a {
+                margin-bottom: 1rem;
+            }
+            .company {
+                margin-bottom: 5rem;
+            }
+        }
+        .social-links a {
+            margin-inline: 1rem;
+        }
+        & a:hover {
+            color: $clr-primary-cyan;
+        }
+        & a img:hover {
+            filter: invert(82%) sepia(92%) saturate(1927%) hue-rotate(125deg) brightness(87%) contrast(85%);
+        }
+    }
+
+    & .attribution { 
+        position: absolute;
+        width: 330px;
+        bottom: 1rem;
+        right: 50%;
+        transform: translateX(50%);
+        color: white;
+        font-size: 11px; 
+        text-align: center; 
+        & a {
+            color: $clr-primary-cyan;
+        }
+    }
+}
+
+@include minBreakPoint(1000px) {
+    .footer-container {
+        flex-direction: row;//
+        justify-content: space-between;//
+        align-items: flex-start;//
+        padding: 6rem $padding-inline-mobile;//
+
+        & .footer-content {
+            display: flex;//
+            & div:not(.social-links) {
+                align-items: flex-start;//
+                margin: 0 7rem 0 0;//
+            }
+        }
+    }
+}
+
+
+@include minBreakPoint(1200px) {
+    .footer-container {
+        padding: 6rem $padding-inline-desktop;//
     }
 }

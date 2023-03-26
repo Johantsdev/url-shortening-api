@@ -1,3 +1,80 @@
-section.hero {
+.hero {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding:0 $padding-inline-mobile 16rem;
+    max-width: 1400px;
+    margin: auto;
+}
 
+.hero .hero-img {
+    position: relative;
+    height: 37rem;
+    & img {
+        position: absolute;
+        right: 50%;
+        transform: translateX(65%);
+        width: 45rem;
+    }
+}
+
+.hero .hero-text {
+    & h1, & p {
+        text-align: center;
+    }
+    & h1 {
+        margin-bottom: 1.8rem;
+    }
+    & p {
+        margin-bottom: 2.5rem;
+    }
+    & button {
+        @include buttonCyan(20rem, 10rem);
+    }
+}
+
+@include minBreakPoint(545px) {
+    .hero .hero-img img {
+        transform: translateX(50%);
+    }
+}
+
+@include minBreakPoint(1000px) {
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text img";
+        padding: 7rem $padding-inline-mobile 13rem;
+    }
+    
+    .hero .hero-img {
+        grid-area: img;
+        & img {
+            width: 100%;
+            height:fit-content;
+        }
+    }
+    
+    .hero .hero-text {
+        grid-area: text;
+        max-width: 470px;
+        & h1, & p {
+            text-align: start;
+        }
+        & h1 {
+            margin-bottom: 0.5rem;
+        }
+        & p {
+            margin-bottom: 2.5rem;
+        }
+        & button {
+            margin-left: 0;
+        }
+    }
+}
+
+@include minBreakPoint(1300px) {
+    .hero {
+        padding: 7rem $padding-inline-desktop 13rem;
+    }
 }

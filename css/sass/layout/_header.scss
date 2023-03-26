@@ -1,3 +1,115 @@
+header {
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+    padding: 4.5rem $padding-inline-mobile 1.5rem;
+}
+
 header .nav-content {
+    transform: translate(-110%);
+    position: absolute;
+    right: $padding-inline-mobile;
+    left: $padding-inline-mobile;
+    display: grid;
+    grid-template-rows: 55% 45%;
+    z-index: 1;
+    padding: 2rem;
+    height: 37rem;
+    border-radius: 1rem;
     background-color: $clr-primary-dark-violet;
+    & .nav-links, & .nav-authentication {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    & .nav-links {
+        border-bottom: solid 1px $clr-neutral-grayish-violet-light;
+        & a:hover {
+            color: $clr-neutral-very-dark-blue;
+        }
+    }
+    & .nav-authentication {
+        & .sign-up {
+            @include buttonCyan(20rem, 10rem);
+            width: clamp(200px, 100%, 350px);
+            margin: 0;
+        }
+        & .login:hover {
+            color: $clr-neutral-very-dark-blue;
+        }
+    }
+}
+header .nav-content.open {
+    transform: translate(0%);
+}
+
+header .hamburger {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    cursor: pointer;
+    & span {
+        height: 3px;
+        background-color: $clr-neutral-grayish-violet;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+}
+
+@include minBreakPoint(1000px) {
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    header .nav-content {
+        position: static;    
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        padding-inline: 1rem;
+        width: 100%;
+        transform: translate(0%);
+        height: auto;
+        border-radius: 0;
+        background-color: inherit;
+        color: $clr-neutral-grayish-violet;
+
+        & .nav-links, & .nav-authentication {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        & .nav-links {
+            & a {
+                margin-inline: 2rem;
+            }
+            border-bottom: none;
+        }
+        & .nav-authentication {
+            & button {
+                margin-inline: 2rem; 
+            }
+            & .sign-up {
+                @include buttonCyan(13rem, 7rem);
+                padding: 0.8rem;
+                margin: 0;
+            }
+            & .login {
+                color: $clr-neutral-grayish-violet;
+            }
+        }
+    }
+    
+    header .hamburger {
+        display: none;
+    }
+}
+
+@include minBreakPoint(1300px) {
+    header {
+        padding: 3rem $padding-inline-desktop;
+    }
 }

@@ -1,28 +1,62 @@
 h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    color: $clr-primary-dark-violet;
-    line-height: 6.8rem;
+    @include darkTitle(4.3rem);
+    line-height: 4.9rem;
+    letter-spacing: 0.01rem;
 }
 h2 {
-    font-size: 4.3rem;
-    font-weight: bold;
-    color: $clr-primary-dark-violet; 
+    @include darkTitle(3rem);
 }
 .banner h2 {
-    color: white;
+    @include whiteTitle(2.7rem);
 }
 h3 {
-    font-size: 3.3rem;
-    font-weight: bold;
-    color: $clr-primary-dark-violet;  
+    @include darkTitle(2.1rem);
 }
-h4, .nav-content{
-    font-size: 2.5rem;
-    font-weight: $fw-bold;
-    color: white;  
+h4 {
+    @include whiteTitle(1.5rem);
 }
-.footer-content a, p {
-    font-size: 2.7rem;
-    color: $clr-neutral-grayish-violet;
+.nav-content , button {
+    @include whiteTitle(1.8rem); 
+}
+.saved-link button {
+    @include whiteTitle(1.5rem); 
+}
+.footer-content a, main p, form input::placeholder {
+    @include bodyText(1.6rem);
+}
+
+.saved-link {
+    & .full-version {
+        color: $clr-neutral-very-dark-blue;
+    }
+    & .shorten-version {
+        color: $clr-primary-cyan;
+    }
+}
+
+.hero p {
+    @include bodyText(1.8rem);
+    line-height: 3rem;
+}
+
+@include minBreakPoint(700px) {
+    .banner h2 {
+        font-size: 3.5rem;
+    }
+}
+@include minBreakPoint(1000px) {
+    .hero p {
+        @include bodyText(2rem)
+    }
+    .hero h1 {
+        @include darkTitle(5rem);
+        line-height: 6rem;
+    }
+}
+@include minBreakPoint(1300px) {
+    .hero h1 {
+        @include darkTitle(6rem);
+        line-height: 7rem;
+    }
+   
 }

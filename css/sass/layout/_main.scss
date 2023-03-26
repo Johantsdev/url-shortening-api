@@ -1,3 +1,238 @@
+//MAIN AND .SHORTEN-LINK-API
 main {
     background-color: $clr-main-background;
+    padding-inline: $padding-inline-mobile;
+}
+
+.shorten-link-api {
+    max-width: 700px;
+    margin: auto;
+
+    & form {
+        transform: translateY(-50%);
+        background: 
+            url('../../../images/bg-shorten-mobile.svg') no-repeat right top,
+             $clr-primary-dark-violet;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        & input, & button {
+            height: 5rem;
+            width: 100%;
+            border-radius: 0.7rem;
+        }
+        & input {
+            padding: 1rem;
+            border:  3px solid white;
+            margin-bottom: 1.4rem;
+        }
+        & button {
+            @include buttonCyan(100%, 0.7rem);
+            border:  3px solid $clr-primary-cyan;
+            &:hover {
+                border:  3px solid $clr-primary-cyan-light;
+            }
+        }
+        & .missing-link-message {
+            display: none;
+            transform: translateY(-0.8rem);
+            font-style: italic;
+            color: $clr-secondary-red-light;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        &.missing-link input {
+            border:  3px solid $clr-secondary-red;
+            &::placeholder {
+                color: $clr-secondary-red-light;
+            }
+        }
+    }
+
+    & .saved-links {
+        display:  block;
+        transform: translateY(-7rem);
+        .saved-link {
+            width: 100%;
+            margin-bottom: 2.4rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            & .full-version, & div {
+            padding: 1.5rem;
+            }
+            & .full-version {
+                border-bottom: solid 1px $clr-neutral-gray;
+            }
+            & .shorten-version {
+                margin-bottom: 1.5rem
+            }
+            & button {
+                @include buttonCyan(100%, 0.7rem);
+
+            }
+        }
+    }
+}
+
+//BREAK POINT FOR //MAIN AND .SHORTEN-LINK-API
+@include minBreakPoint(1000px) {
+    main {
+        padding-inline: $padding-inline-mobile;//
+    }
+    .shorten-link-api {
+        max-width: 1400px;//
+        padding: 0 $padding-inline-desktop;//
+        & form {
+            display: flex;//
+
+            background: 
+                center / cover no-repeat url('../../../images/bg-shorten-desktop.svg'), 
+                $clr-primary-dark-violet;//
+            padding: 4rem;//
+
+            & input {
+                padding: 2.5rem;//
+                margin-bottom: 0;//
+            }
+            & button {
+                display: flex;//
+                justify-content: center;//
+                align-items: center;//
+                padding: 2.5rem;//
+                width: 230px;//
+                margin-left: 2rem;//
+            }
+            & .missing-link-message {
+                position: absolute;//
+                bottom: 1.7rem;//
+                transform: translateY(0);//
+                margin-bottom: 0rem;//
+            }
+        }
+
+        & .saved-links {
+            transform: translateY(-3rem);//
+            .saved-link {
+                padding-inline: 3rem;//
+                display: flex;//
+                justify-content: space-between;//
+                align-items: center;//
+
+                & .full-version, & div {
+                padding: 0;//
+                }
+                & div {
+                    display: flex;//
+                    align-items: center;//
+                }
+                & .full-version {
+                    border-bottom: none;//
+                }
+                & .shorten-version {
+                    margin-bottom: 0;//
+                }
+                & button {
+                    @include buttonCyan(100px, 0.7rem);//
+                    font-size: 1.4rem;//
+                    margin-left: 2rem;//
+                    margin-block: 2rem;//
+                }
+            }
+        }
+    }
+}
+
+//.MAIN-CONTENT
+.main-content {
+    max-width: 545px;
+    margin: auto;
+    & h2, & h3, & p {
+        text-align: center;
+    }
+    & h2 {
+        margin-bottom: 2rem;
+    }
+    & h3 {
+        margin-bottom: 1.5rem;
+    }
+    & > p {
+        margin-bottom: 9.5rem;
+    }
+    & .information-blocks {
+        position: relative;
+        padding-bottom: 9.5rem;
+        & .cyan-bar {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            height: 70%;
+            width: 0.75rem;
+            background-color: $clr-primary-cyan;
+        }
+    } 
+    & .information-block {
+        position: relative;
+        width: 100%;
+        &:not(:last-child) {
+            margin-bottom: 9.5rem;
+        }
+        padding: 8rem 3rem 4rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        & .img-container {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            transform: translate(50%, -50%);
+            margin: 0 auto;
+            width: 9rem;
+            height: 9rem;
+            background-color: $clr-primary-dark-violet;
+            border-radius: 50%;
+            & img {
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+            }
+        }
+    }
+}
+
+//BREAK POINT FOR //.MAIN-CONTENT
+@include minBreakPoint(1300px) {
+    .main-content {
+        max-width: 1400px;//
+        padding-inline: $padding-inline-desktop;//
+        & .information-blocks {
+            display: grid;//
+            grid-template-columns: repeat(3, 1fr);//
+            grid-template-rows: repeat(19, 20px);//
+            column-gap: 2rem;//
+            padding-bottom: 11rem;//
+            & .detailed {
+                grid-row: 3;//
+                grid-column: 2;//
+            }
+            & .fully {
+                grid-row: 5;//
+                grid-column: 3;//
+            }
+            & .cyan-bar {
+                top: -19%;//
+                transform:rotate(90deg);//
+                height: 100%;//
+            }
+        } 
+        & .information-block {
+            width: 100%;//
+            height: 300px;//
+            margin-bottom: 0rem;//
+            
+            & .img-container {
+                right:auto;//
+                left: -0.5rem;//
+            }
+        }
+    }
+    
 }

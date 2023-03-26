@@ -14,8 +14,6 @@
 
   <body>
     <header>
-
-      <nav>
         <a class="logo" href="#" aria-label="visit homepage" aria-current="page">
           <img src="./images/logo.svg" alt="Shortly logo">
         </a>
@@ -37,10 +35,13 @@
           <span></span>
           <span></span>
         </button>
-      </nav>
+
     </header>
 
     <section class="hero">
+      <div class="hero-img">
+        <img src="./images/illustration-working.svg" alt="Person working on a desk">
+      </div>
       <div class="hero-text"> 
         <h1>More than just shorter links</h1>
         <p>
@@ -49,20 +50,16 @@
         </p>
         <button>Get Started</button>
       </div>
-      <div class="hero-img">
-        <img src="./images/illustration-working.svg" alt="Person working on a desk">
-      </div>
     </section>
 
     <main>
 
-      <div class="api">
+      <div class="shorten-link-api">
 
-        <form class="shorten-link-form">
+        <form class="missing-lin">
           <input type="text" placeholder="Shorten a link here...">
           <div class="missing-link-message">Please add a link</div>
           <button>Shorten It!</button>
-          <img src="./images/bg-shorten-mobile.svg" alt="background form">
         </form>
 
         <div class="saved-links">
@@ -99,7 +96,9 @@
           advanced statistics dashboard.
         </p>
         <div class="information-blocks">
-          <div class="information-block">
+          <div class="cyan-bar"></div>
+
+          <div class="information-block brand">
             <div class="img-container">
               <img src="./images/icon-brand-recognition.svg" alt="brand recognition icon">
             </div>
@@ -109,7 +108,7 @@
               mean a thing. Branded links help instil confidence in your content.
             </p>
           </div>
-          <div class="information-block">
+          <div class="information-block detailed">
             <div class="img-container">
               <img src="./images/icon-detailed-records.svg" alt="detailed records recognition icon">
             </div>
@@ -119,7 +118,7 @@
               people engage with your content helps inform better decisions.
             </p>
           </div>
-          <div class="information-block">
+          <div class="information-block fully">
             <div class="img-container">
               <img src="./images/icon-fully-customizable.svg" alt="brand fully customizable">
             </div>
@@ -139,57 +138,60 @@
     </section>
     
     <footer>
-
-      <a href="#" class="logo" aria-label="visit homepage" aria-current="page">
-        <img class="filter-white" src="./images/logo.svg" alt="Shortly logo">
-      </a>
-
-      <div class="footer-content">
-
-        <div class="features">
-          <h4>Features</h4>
-          <a href="#">Link Shortening</a>
-          <a href="#">Branded Links</a>
-          <a href="#">Analytics</a>
+      <div class="footer-container">
+        <a href="#" class="logo" aria-label="visit homepage" aria-current="page">
+          <img class="filter-white" src="./images/logo.svg" alt="Shortly logo">
+        </a>
+        <div class="footer-content">
+          <div class="features">
+            <h4>Features</h4>
+            <a href="#">Link Shortening</a>
+            <a href="#">Branded Links</a>
+            <a href="#">Analytics</a>
+          </div>
+          <div class="ressources">
+            <h4>Resources</h4>
+            <a href="#">Blog</a>
+            <a href="#">Developers</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="company">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="social-links">
+            <a href="#">
+              <img src="./images/icon-facebook.svg" alt="facebook icon">
+            </a>
+            <a href="#">
+              <img src="./images/icon-twitter.svg" alt="twitter icon">
+            </a>
+            <a href="#">
+              <img src="./images/icon-pinterest.svg" alt="pinterest icon">
+            </a>
+            <a href="#">
+              <img src="./images/icon-instagram.svg" alt="instagram icon">
+            </a>
+          </div>
         </div>
-
-        <div class="ressources">
-          <h4>Resources</h4>
-          <a href="#">Blog</a>
-          <a href="#">Developers</a>
-          <a href="#">Support</a>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="#">Your Name Here</a>.
         </div>
-
-        <div class="company">
-          <h4>Company</h4>
-          <a href="#">About</a>
-          <a href="#">Our Team</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
-        </div>
-
-        <div class="social-links">
-          <a href="#">
-            <img src="./images/icon-facebook.svg" alt="facebook icon">
-          </a>
-          <a href="#">
-            <img src="./images/icon-twitter.svg" alt="twitter icon">
-          </a>
-          <a href="#">
-            <img src="./images/icon-pinterest.svg" alt="pinterest icon">
-          </a>
-          <a href="#">
-            <img src="./images/icon-instagram.svg" alt="instagram icon">
-          </a>
-        </div>
-
-      </div>
-
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
       </div>
     </footer>
+    <script>
+      const hamburgerBtn = document.querySelector('.hamburger');
+      const navContent = document.querySelector('.nav-content');
 
+      hamburgerBtn.addEventListener('click', () => {
+        navContent.classList.toggle('open');
+        const ariaToggle = hamburgerBtn.getAttribute("aria-expanded") === "true" ?  "false" : "true";
+        hamburgerBtn.setAttribute("aria-expanded", ariaToggle)
+      })
+    </script>
   </body>
 </html>

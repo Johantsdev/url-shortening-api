@@ -3,3 +3,32 @@
     @content;
   }
 }
+
+@mixin darkTitle($font-size) {
+  font-size: $font-size;
+  font-weight: bold;
+  color: $clr-neutral-very-dark-blue;
+}
+
+@mixin whiteTitle($font-size) {
+  font-size: $font-size;
+  font-weight: bold;
+  color: white;
+}
+
+@mixin bodyText($font-size) {
+  font-size: $font-size;
+  color: $clr-neutral-grayish-violet;
+}
+
+@mixin buttonCyan($width, $border-radius) {
+  display: block;
+  margin: auto;
+  padding: 1.2rem;
+  width: $width;
+  border-radius: $border-radius;
+  background-color: $clr-primary-cyan;
+  &:hover {
+    background-color: $clr-primary-cyan-light;
+  }
+}
