@@ -56,35 +56,13 @@
 
       <div class="shorten-link-api">
 
-        <form class="missing-lin">
+        <form>
           <input type="text" placeholder="Shorten a link here...">
           <div class="missing-link-message">Please add a link</div>
           <button>Shorten It!</button>
         </form>
 
-        <div class="saved-links">
-          <div class="saved-link">
-            <p class="full-version">https://www.frontendmentor.io</p>
-            <div>
-              <p class="shorten-version">https://rel.ink/k4lKyk</p>
-              <button>Copy</button>
-            </div>
-          </div>
-          <div class="saved-link">
-            <p class="full-version">https://www.frontendmentor.io</p>
-            <div>
-              <p class="shorten-version">https://rel.ink/k4lKyk</p>
-              <button>Copy</button>
-            </div>
-          </div>
-          <div class="saved-link">
-            <p class="full-version">https://www.frontendmentor.io</p>
-            <div>
-              <p class="shorten-version">https://rel.ink/k4lKyk</p>
-              <button>Copy</button>
-            </div>
-          </div>
-        </div>
+        <div class="saved-links"></div>
 
       </div>
 
@@ -183,15 +161,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      const hamburgerBtn = document.querySelector('.hamburger');
-      const navContent = document.querySelector('.nav-content');
-
-      hamburgerBtn.addEventListener('click', () => {
-        navContent.classList.toggle('open');
-        const ariaToggle = hamburgerBtn.getAttribute("aria-expanded") === "true" ?  "false" : "true";
-        hamburgerBtn.setAttribute("aria-expanded", ariaToggle)
-      })
-    </script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
