@@ -1,4 +1,4 @@
-//1 - Handle hamburger button for mobile devices
+//1 - Handle navigation for mobile devices
 const hamburgerBtn = document.querySelector('.hamburger');
 const navContent = document.querySelector('.nav-content');
 
@@ -8,61 +8,28 @@ hamburgerBtn.addEventListener('click', () => {
   hamburgerBtn.setAttribute("aria-expanded", ariaToggle);
 })
 
-//2 - API
+//2 - handle API and display the url
+import getShortenUrl from "./functions/getShortenUrl.js";
+import showInputError from "./functions/showInputError.js"
+
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-const missingLinkMsg = document.querySelector('.missing-link-message');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    form.classList.remove('missing-link');
-    missingLinkMsg.style.display = 'none';
+    showInputError(false);
 
     if (input.value === '') {
-        form.classList.add('missing-link');
-        missingLinkMsg.style.display = 'block';
+        showInputError(true);
     } else {
         getShortenUrl(input.value);
     }
 })
 
-async function getShortenUrl(fullUrl) {
-    try {
-        const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${fullUrl}`);
-
-        if (!res.ok) {
-            throw new Error(`${res.status}`);
-        }
-
-        const body = await res.json();
-        addNewUrl(fullUrl, body["result"].full_short_link);
-
-    } catch (error_code) {
-        addNewUrl("Please enter a valid link", "Error");
-    }
-}
-
+//3 - Display saved url in session storage when refreshing the page
+import addNewUrl from "./functions/addNewURL.js";
 const savedLinks = document.querySelector('.saved-links');
-const datas = [];
-
-function addNewUrl(fullUrl, shortenUrl) {
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <div class="saved-link">
-        <p class="full-version">${fullUrl}</p>
-        <div>
-            <p class="shorten-version">${shortenUrl}</p>
-            <button value=${shortenUrl} class="copy-btn">Copy</button>
-        </div>
-    </div>     
-    `;
-    savedLinks.appendChild(div);
-    
-    let data = {'fullUrl': fullUrl, 'shortenUrl': shortenUrl};
-    datas.push(data)
-    sessionStorage.setItem('datas', JSON.stringify(datas));
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem('datas') === null) {
@@ -70,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         let datas = JSON.parse(sessionStorage.getItem('datas'));
         datas.forEach(data => {
-            addNewUrl(data.fullUrl, data.shortenUrl)
+            addNewUrl(data.fullUrl, data.shortenUrl);
         })
     }
 })
@@ -79,11 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
 savedLinks.addEventListener('click', (e) => {
     if (e.target.classList.contains('copy-btn')) {
         navigator.clipboard.writeText(e.target.value);
+
         const copyBtns = document.querySelectorAll('.copy-btn');
         copyBtns.forEach(copyBtn => {
             copyBtn.style.backgroundColor = "#2acfcf";
             copyBtn.innerHTML = "Copy";
         })
+
         e.target.style.backgroundColor = "#3b3054";
         e.target.innerHTML = "Copied!";
     }
