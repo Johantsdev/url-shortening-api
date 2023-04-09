@@ -1,19 +1,12 @@
-# Frontend Mentor - Shortly URL shortening API Challenge solution
-
-[here the Link to the github repository](https://github.com/Johantsdev/url-shortening-api)  
 [here the link to the site](https://url-shortening-api-johantsdev.netlify.app/)
+
+# Frontend Mentor - Shortly URL shortening API Challenge solution
 
 This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-- [My process](#my-process)
-  - [Built with](#built-with)
-
 ## Overview
+
+![](./screenshot.PNG)
 
 ### The challenge
 
@@ -25,10 +18,6 @@ Users should be able to:
 - Copy the shortened link to their clipboard in a single click
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
-
-### Screenshot
-
-![](./screenshot.PNG)
 
 ## My process
 
