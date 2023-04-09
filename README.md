@@ -1,4 +1,4 @@
-[here the link to the site](https://url-shortening-api-johantsdev.netlify.app/)
+[click to see the site](https://url-shortening-api-johantsdev.netlify.app/)
 
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
