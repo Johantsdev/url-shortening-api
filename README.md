@@ -1,5 +1,8 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
+[here the Link to the github repository](https://github.com/Johantsdev/url-shortening-api)  
+[here the link to the site](https://url-shortening-api-johantsdev.netlify.app/)
+
 This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
@@ -7,7 +10,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 
@@ -27,12 +29,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.PNG)
-
-
-### Links
-
-[Git hub](https://github.com/Johantsdev/url-shortening-api)  
-[Site url](https://url-shortening-api-johantsdev.netlify.app/)
 
 ## My process
 
